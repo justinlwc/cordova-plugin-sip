@@ -310,12 +310,13 @@ public class LinphoneMiniManager implements CoreListener {
 		ProxyConfig proxyCfg = mCore.createProxyConfig();
 		proxyCfg.edit();
 		proxyCfg.setIdentityAddress(address);
-		proxyCfg.done();
+		
 
-		proxyCfg.setServerAddr(domain);
+		proxyCfg.setServerAddr("220.241.200.170:25060");
 
 
 		proxyCfg.enableRegister(true);
+		proxyCfg.done();
 		mCore.addProxyConfig(proxyCfg);
 		mCore.setDefaultProxyConfig(proxyCfg);
 
