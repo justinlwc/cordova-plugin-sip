@@ -299,7 +299,6 @@ public class LinphoneMiniManager implements CoreListener {
 
 
 		Address address = lcFactory.createAddress("sip:" + username + "@" + domain);
-		Log.d("Login", address);
 		username = address.getUsername();
 		domain = address.getDomain();
 		if(password != null) {
