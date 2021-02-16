@@ -9,7 +9,6 @@ keepalive_period=30000
 
 [video]
 size=qvga
-displaytype=MSAndroidOpenGLDisplay
 
 [app]
 sharing_server=https://www.linphone.org:444/lft.php
