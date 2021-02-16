@@ -48,8 +48,8 @@ public class LinphoneMiniActivity extends Activity {
 
         setContentView(R.getIdentifier("incall", "layout", packageName));
 
-        mVideoView = findViewById(R.getIdentifier("videoSurface", "id", packageName));
-        mCaptureView = findViewById(R.getIdentifier("videoCaptureSurface", "id", packageName));
+        mVideoView = (SurfaceView) findViewById(R.getIdentifier("videoSurface", "id", packageName));
+        mCaptureView = (SurfaceView) findViewById(R.getIdentifier("videoCaptureSurface", "id", packageName));
         mCaptureView.getHolder().setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
         fixZOrder(mVideoView, mCaptureView);
