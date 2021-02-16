@@ -205,7 +205,7 @@ public class LinphoneMiniManager implements CoreListener {
 
         if(mCore.isNetworkReachable()) {
 			CallParams params = mCore.createCallParams(mCore.getCurrentCall());
-			params.enableVideo(false);
+			params.enableVideo(true);
 			mCore.inviteAddressWithParams(lAddress, params);
         } else {
             Log.e(new Object[]{"Error: Network unreachable"});
