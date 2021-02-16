@@ -312,7 +312,7 @@ public class LinphoneMiniManager implements CoreListener {
 		proxyCfg.setIdentityAddress(address);
 		
 
-		proxyCfg.setServerAddr("220.241.200.170:25060");
+		proxyCfg.setServerAddr("sip:220.241.200.170:25060");
 
 
 		proxyCfg.enableRegister(true);
