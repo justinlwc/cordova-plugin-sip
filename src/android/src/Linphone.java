@@ -25,6 +25,7 @@ public class Linphone extends CordovaPlugin  {
     public static Core mLinphoneCore;
     public static Context mContext;
     private static final int RC_MIC_PERM = 2;
+    private static final int RC_CAMERA_PERM = 3;
     public static Timer mTimer;
     public CallbackContext mListenCallback;
     CordovaInterface cordova;
@@ -89,6 +90,7 @@ public class Linphone extends CordovaPlugin  {
     public void login(final String username, final String password, final String domain, final CallbackContext callbackContext) {
       if (!cordova.hasPermission(Manifest.permission.RECORD_AUDIO)) {
         cordova.requestPermission(this, RC_MIC_PERM, Manifest.permission.RECORD_AUDIO);
+        cordova.requestPermission(this, RC_CAMERA_PERM, Manifest.permission.CAMERA);
       }
 
       mLinphoneManager.login(username,password,domain,callbackContext);
