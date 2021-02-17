@@ -90,6 +90,9 @@ public class Linphone extends CordovaPlugin  {
     public void login(final String username, final String password, final String domain, final CallbackContext callbackContext) {
       if (!cordova.hasPermission(Manifest.permission.RECORD_AUDIO)) {
         cordova.requestPermission(this, RC_MIC_PERM, Manifest.permission.RECORD_AUDIO);
+      }
+      
+      if (!cordova.hasPermission(Manifest.permission.CAMERA)) {
         cordova.requestPermission(this, RC_CAMERA_PERM, Manifest.permission.CAMERA);
       }
 
