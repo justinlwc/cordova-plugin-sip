@@ -191,7 +191,7 @@ public class LinphoneMiniManager implements CoreListener {
 //		mCore.getConfig(availableCores);
 	}
 
-    public void newOutgoingCall(String to, String displayName) {
+    public void newOutgoingCall(String to, String displayName, boolean is_video) {
         Address lAddress;
 		lAddress = mCore.interpretUrl(to);
 
@@ -205,7 +205,12 @@ public class LinphoneMiniManager implements CoreListener {
 
         if(mCore.isNetworkReachable()) {
 			CallParams params = mCore.createCallParams(mCore.getCurrentCall());
-			params.enableVideo(false);
+			if (is_video == false){
+				params.enableVideo(false);
+			}
+			else {
+				params.enableVideo(true);
+			}
 			mCore.inviteAddressWithParams(lAddress, params);
         } else {
             Log.e(new Object[]{"Error: Network unreachable"});
@@ -287,7 +292,7 @@ public class LinphoneMiniManager implements CoreListener {
 	public void call(String address, String displayName, CallbackContext callbackContext) {
 
 		mCallbackContext = callbackContext;
-		newOutgoingCall(address, displayName);
+		newOutgoingCall(address, displayName, false);
 	}
 
 	public void hangup(CallbackContext callbackContext) {
