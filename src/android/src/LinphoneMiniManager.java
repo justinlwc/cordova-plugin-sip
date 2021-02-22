@@ -372,9 +372,6 @@ public class LinphoneMiniManager implements CoreListener {
 		{
 			mCallbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK,"Error"));
 		}
-		else {
-			mCallbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK,"Error"));
-		}
 		Log.d("Call state: " + state + "(" + s + ")");
 
 	}
