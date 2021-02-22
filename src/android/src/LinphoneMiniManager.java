@@ -54,7 +54,6 @@ import org.linphone.core.PublishState;
 import org.linphone.core.RegistrationState;
 import org.linphone.core.SubscriptionState;
 import org.linphone.core.VersionUpdateCheckResult;
-import org.linphone.core.VideoActivationPolicy;
 import org.linphone.mediastream.Log;
 import org.linphone.mediastream.video.capture.hwconf.AndroidCameraConfiguration;
 import org.linphone.mediastream.video.capture.hwconf.AndroidCameraConfiguration.AndroidCamera;
@@ -99,16 +98,6 @@ public class LinphoneMiniManager implements CoreListener {
 			mCore.setNetworkReachable(true); // Let's assume it's true
 			mCore.addListener(this);
 			mCaptureView = new SurfaceView(mContext);
-			
-			
-				mCore.enableVideoCapture(true);
-				mCore.enableVideoDisplay(true);
-				final VideoActivationPolicy videoActivationPolicy = mCore.getVideoActivationPolicy();
-				//videoActivationPolicy.setAutomaticallyInitiate(false);
-				videoActivationPolicy.setAutomaticallyAccept(true);
-				mCore.setVideoActivationPolicy(videoActivationPolicy);
-			
-			
 			mCore.start();
 		} catch (IOException e) {
 			Log.e(new Object[]{"Error initializing Linphone",e.getMessage()});
