@@ -100,14 +100,14 @@ public class LinphoneMiniManager implements CoreListener {
 			mCore.addListener(this);
 			mCaptureView = new SurfaceView(mContext);
 			
-			if (mCore.videoSupported()) {
+			
 				mCore.enableVideoCapture(true);
 				mCore.enableVideoDisplay(true);
 				final VideoActivationPolicy videoActivationPolicy = mCore.getVideoActivationPolicy();
 				//videoActivationPolicy.setAutomaticallyInitiate(false);
 				videoActivationPolicy.setAutomaticallyAccept(true);
 				mCore.setVideoActivationPolicy(videoActivationPolicy);
-			}
+			
 			
 			mCore.start();
 		} catch (IOException e) {
