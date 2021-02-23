@@ -318,6 +318,7 @@ public class LinphoneMiniManager implements CoreListener {
 		
 
 		proxyCfg.setServerAddr("sip:220.241.200.170:25060;transport=udp");
+		proxyCfg.setRoute("sip:220.241.200.170:25060;transport=udp");
 
 
 		proxyCfg.enableRegister(true);
