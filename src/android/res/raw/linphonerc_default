@@ -1,6 +1,6 @@
 [net]
-download_bw=380
-upload_bw=380
+download_bw=0
+upload_bw=0
 
 [sip]
 use_info=0
