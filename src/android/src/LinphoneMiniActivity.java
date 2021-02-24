@@ -99,11 +99,8 @@ public class LinphoneMiniActivity extends Activity {
 
         String videoDeviceId = Linphone.mLinphoneCore.getVideoDevice();
         Linphone.mLinphoneCore.setVideoDevice(videoDeviceId);
-	if (address != "" && displayName != ""){
-        	Linphone.mLinphoneManager.newOutgoingCall(address, displayName, true);
+        Linphone.mLinphoneManager.newOutgoingCall(address, displayName, true);
 	}
-	
-}
 
     private void fixZOrder(SurfaceView video, SurfaceView preview) {
         video.setZOrderOnTop(false);
