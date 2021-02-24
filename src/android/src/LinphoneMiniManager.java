@@ -282,9 +282,19 @@ public class LinphoneMiniManager implements CoreListener {
 
 	public void acceptCall(CallbackContext callbackContext) {
 		mCallbackContext = callbackContext;
-        Call call = mCore.getCurrentCall();
+        	Call call = mCore.getCurrentCall();
 		if(call != null){
-			call.accept();
+			//call.accept();
+			CallParams params = call.getParams();
+			params.enableVideo(true);
+			params.enableAudio(true);
+			mCore.acceptCallWithParams(call, params);
+			
+			Intent intent = new Intent(mContext, LinphoneMiniActivity.class);
+            		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            		intent.putExtra("address", "");
+            		intent.putExtra("displayName", "");
+            		mContext.startActivity(intent);
 		}
 
 	}
