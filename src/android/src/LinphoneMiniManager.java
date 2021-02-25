@@ -292,6 +292,8 @@ public class LinphoneMiniManager implements CoreListener {
 			params.enableAudio(true);
 			mCore.acceptCallWithParams(call, params);
 			
+			call.enableCamera(true);
+			
 			Intent intent = new Intent(mContext, LinphoneMiniActivity.class);
             		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             		intent.putExtra("address", "");
