@@ -290,7 +290,6 @@ public class LinphoneMiniManager implements CoreListener {
 			CallParams params = call.getParams();
 			params.enableVideo(true);
 			params.enableAudio(true);
-			call.enableCamera(true);
 			mCore.acceptCallWithParams(call, params);
 			
 
