@@ -100,7 +100,7 @@ public class LinphoneMiniActivity extends Activity {
         String videoDeviceId = Linphone.mLinphoneCore.getVideoDevice();
         Linphone.mLinphoneCore.setVideoDevice(videoDeviceId);
         Linphone.mLinphoneManager.newOutgoingCall(address, displayName, true);
-	if (address!=" " && displayName!=" "){
+	if (!address.equals("") && !displayName.equals("")){
 		Linphone.mLinphoneManager.newOutgoingCall(address, displayName, true);
 	}
 	}
