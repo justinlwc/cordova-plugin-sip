@@ -294,8 +294,8 @@ public class LinphoneMiniManager implements CoreListener {
 			
 			Intent intent = new Intent(mContext, LinphoneMiniActivity.class);
             		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            		intent.putExtra("address", "");
-            		intent.putExtra("displayName", "");
+            		intent.putExtra("address", " ");
+            		intent.putExtra("displayName", " ");
             		mContext.startActivity(intent);
 			
 		}
